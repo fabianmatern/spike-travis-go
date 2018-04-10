@@ -1,6 +1,6 @@
 language: go
-  go:
-    - "1.9"
+go:
+  - "1.9"
 before_install:
   - cp .netrc ~
   - chmod 600 .netrc
