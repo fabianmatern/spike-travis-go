@@ -7,6 +7,6 @@ install:
   - go get -u github.com/onsi/gomega/... 
   - export PATH=$PATH:$HOME/gopath/bin
 script:
-  - cd src/github.com/fabianmatern/spike-travis-go && dep ensure -vendor-only
+  - cd src/github.com/dydyistc/spike-travis-go && dep ensure -vendor-only
   - ginkgo -r --randomizeAllSpecs --randomizeSuites --failOnPending --cover --trace --race --compilers=2
 
