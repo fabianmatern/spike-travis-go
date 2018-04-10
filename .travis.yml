@@ -4,6 +4,7 @@ go:
 go_import_path: github.com/fabianmatern/spike-travis-go
 script: 
   - git clone --depth 1 --branch v0.3.0 https://github.com/golang/dep.git $GOPATH/src/github.com/golang/dep && cd $GOPATH/src/github.com/golang/dep/cmd/dep && go install .
-  - git clone --depth 1 --branch v1.4.0 https://github.com/onsi/ginkgo.git $GOPATH/src/github.com/onsi/ginkgo && cd $GOPATH/src/github.com/onsi/ginkgo/ginkgo && go install .
+  - go get -u github.com/onsi/ginkgo/ginkgo
+  - go get -u github.com/onsi/gomega/... 
   - dep ensure -vendor-only
   - $GOPATH/bin/ginkgo 
