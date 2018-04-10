@@ -1,3 +1,7 @@
 pkg
 bin
-src/github.com/dydyistc/spike-travis-go/vendor/
+src/github.com/dydyistc/spike-travis-go/vendor
+src/github.com/golang
+src/github.com/onsi
+src/gopkg.in
+src/golang.org

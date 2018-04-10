@@ -8,5 +8,8 @@ import (
 )
 
 var _ = Describe("SpikeTravisGo", func() {
+	It("should run test", func() {
+		Expect(1 - 1).Should(BeZero())
+	})
 
 })
