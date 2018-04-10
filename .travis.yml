@@ -3,11 +3,11 @@ go:
   - "1.9"
 go_import_path: github.com/fabianmatern/spike-travis-go
 install: 
-  - git clone --depth 1 --branch v0.3.0 https://github.com/golang/dep.git $GOPATH/src/github.com/golang/dep && cd $GOPATH/src/github.com/golang/dep/cmd/dep && go install .
+  - go get github.com/golang/dep
   - go get -u github.com/onsi/ginkgo/ginkgo
   - go get -u github.com/onsi/gomega/... 
-  - dep ensure -vendor-only
   - export PATH=$PATH:$HOME/gopath/bin
 script:
+  - dep ensure -vendor-only
   - ginkgo -r --randomizeAllSpecs --randomizeSuites --failOnPending --cover --trace --race --compilers=2
 
