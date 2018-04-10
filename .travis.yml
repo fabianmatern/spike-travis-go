@@ -1,0 +1,8 @@
+language: go
+  go:
+    - "1.9"
+before_install:
+  - cp .netrc ~
+  - chmod 600 .netrc
+
+script: go get github.com/julienschmidt/httprouter
