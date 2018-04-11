@@ -7,7 +7,6 @@ install:
 - go get -u github.com/onsi/gomega/...
 - export PATH=$PATH:$HOME/gopath/bin
 script:
-- cd src/github.com/dydyistc/spike-travis-go && dep ensure
 - ginkgo -r --randomizeAllSpecs --randomizeSuites --race --trace  && go vet
 deploy:
   provider: heroku
