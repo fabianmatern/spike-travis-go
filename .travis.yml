@@ -5,9 +5,10 @@ install:
 - go get -u github.com/golang/dep/cmd/dep
 - go get -u github.com/onsi/ginkgo/ginkgo
 - go get -u github.com/onsi/gomega/...
-- export PATH=$PATH:$HOME/gopath/bin
-script:
-- ginkgo -r --randomizeAllSpecs --randomizeSuites --race --trace  && go vet
+#- export PATH=$PATH:$HOME/gopath/bin
+#script:
+#- cd src/github.com/dydyistc/spike-travis-go && dep ensure
+#- ginkgo -r --randomizeAllSpecs --randomizeSuites --race --trace  && go vet
 deploy:
   provider: heroku
   buildpack: https://github.com/dydyistc/spike-travis-go.git
