@@ -7,12 +7,12 @@ install:
 - go get -u github.com/onsi/gomega/...
 - export PATH=$PATH:$HOME/gopath/bin
 script:
-- cd src/github.com/dydyistc/spike-travis-go && dep ensure
+- cd src/github.com/fabianmatern/spike-travis-go && dep ensure
 - ginkgo -r --randomizeAllSpecs --randomizeSuites --race --trace  && go vet
 - go build -o bin/spike-travis-go -i .
 deploy:
   provider: heroku
-  skip_cleanup: true # Important, otherwise the build output would be purged.
+  skip_cleanup: true
   file: bin/spike-travis-go
   api_key:
-    secure: E/1/tTJnJlptPE5gZFYfYqN6pjEF5akzIRcv0FSZJcKO3IJX4JYRiyIhRu/EvsYD+zSUxPPh5gZht4Cw+iN4k+SbQS1JxrjkOMJDjBcggoHF/UcjZ2X9P7AYalffG1n9shQ8U5QbPoen/6AbKvJcgdBfLCt6kXBZBY301wrpV1roCf9KaQDcvK1OpuM20Hjmf3HiJLJlZGilgv2XY/k59qEDH5JImj//31dW4LLZmkrOxHFsqD+0YYH75G/h4wd4+vtQRO33vlqvHkR0xbsHuaHnc8TahhNpPOgP3UT8yOuDPWsAfVpptON0DiVuB0mw/btzZVIemiMYuMJ73m+jQG/3IYUlKgBBJHGthPWAAyx1gtGerVhIyqrpznttE/pBEfRlwly7sHMG6IiWQVmdpa3bMrtCZ7eeqaeOBp02y3Ybq74J2b20guD6jnNR/z9QvpY5oxJrnXoS0ezSB3qB76HtkxTbqLJmzmnOEZeBxwWSrPhkhpEOFi+7klhgDynofS/QtPl8eY2zb78YENoki+LbB7MatvfRYwKarkiD71Q6PQ+ittzXeWxwylpV34+2cfX4Xe7jmW1L2VivH1daLpOKCZHXGFVkfWyg9snEV5GdxPVeBi+miI1V3ZqeX7oz1/0AYFN6x3HpxEcQ5k1gSmm2jBgF35Im6CPX5Ub37aE=
+    secure: d90uAFsdnKldvgaraxs5KWbNDuSReTIK71Q9DOl1Xw7Etp1d271gg7Ei2GyOpENWAxEgrEO0gMdiUFYJLUp43+tq3YuKpWigLCYpj/HlP5I4AeQ7w42gG2I6/h7RABS4HdtrSNvMhWhQyXdm+99DDqLQWP7c+DYmePqMUhm1/pTrVN0+dyRegGx6D75b/0kWM1lixEtKXuuzoME6zyI8Lc8iVW4qAJNXy1JA46IefekeUa1j/oTj//mN+V5sDvylp3x9/wOIa+cQwVQkzkOYEKGvmk1elBW6n5Ecbm1K1QsY/PDUme1fsf4TNhAQ0xzU1qW7n+lusPe/8bQv10xs4BxEAT0Z2LYoczvO2o3sNQCOlmhMwv0yGmJiLZCHRCYcG3UAyKYbjy9Pd41n5dLn0anyCTEMoniFiFwv8ln7qGF/8VXNvwg/VmpAU85DvzmYJZc8U1hvTx7bsyAcv8FtZt+Pn3/Y53I9r/J9/DHzSgYslD9ibri+oc35h5SM75Vv8e0S86rDlesgVbA0e785iQy1CBRAsBi2+cSUNsxMo/thqWV0QJ6g+kOyphHFZmf9szaMziXxIPXiXTr0Ee4IqcPDWdnk7gVZFZ9ObmIhghk4JCslRwH4KFgmp5cFKEHASX77UDUSXJkM6BBFLT1BgEEGFCn1CuOfzfntyd8ywaE=

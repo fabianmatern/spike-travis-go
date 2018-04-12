@@ -1,4 +1,4 @@
-package main
+package spike_travis_go
 
 import (
 	. "fmt"
