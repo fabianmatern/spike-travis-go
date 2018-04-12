@@ -12,6 +12,7 @@ script:
 - go build -o ./bin/spike-travis-go server.go
 deploy:
   app: spike-travis-go-fabianmatern
+  port: 1024
   provider: heroku
   skip_cleanup: true
   file: bin/spike-travis-go
