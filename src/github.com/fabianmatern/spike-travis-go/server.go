@@ -32,7 +32,7 @@ func main() {
 	router.GET("/feature/:id", handler)
 	router.GET("/feature/:id/status", handler)
 
-	if e := http.ListenAndServe(port, router); e != nil {
+	if e := http.ListenAndServe(":" + port, router); e != nil {
 		Println(e)
 	}
 }
