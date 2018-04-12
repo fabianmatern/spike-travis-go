@@ -11,6 +11,7 @@ script:
 - ginkgo -r --randomizeAllSpecs --randomizeSuites --race --trace  && go vet
 - go build -o bin/spike-travis-go -i .
 deploy:
+  app: spike-travis-go-fabianmatern
   provider: heroku
   skip_cleanup: true
   file: bin/spike-travis-go
