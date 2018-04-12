@@ -9,7 +9,7 @@ install:
 script:
 - cd src/github.com/fabianmatern/spike-travis-go && dep ensure
 - ginkgo -r --randomizeAllSpecs --randomizeSuites --race --trace  && go vet
-- go build -o bin/spike-travis-go -i .
+- go build -o ./bin/spike-travis-go server.go
 deploy:
   app: spike-travis-go-fabianmatern
   provider: heroku

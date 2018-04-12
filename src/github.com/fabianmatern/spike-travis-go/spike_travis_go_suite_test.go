@@ -1,4 +1,4 @@
-package spike_travis_go
+package main
 
 import (
 	"testing"
