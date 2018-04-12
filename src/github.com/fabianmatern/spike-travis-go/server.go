@@ -4,11 +4,13 @@ import (
 	. "fmt"
 	"net/http"
 	"time"
+	"os"
 	"math/rand"
 	"github.com/julienschmidt/httprouter"
 )
 
 func main() {
+	port := os.Getenv("PORT")
 	router := httprouter.New()
 	router.GET("/.well-known/live", func(w http.ResponseWriter, r *http.Request,  _ httprouter.Params) {
 		w.Header().Set("Content-Type", "text/plain")
@@ -30,7 +32,7 @@ func main() {
 	router.GET("/feature/:id", handler)
 	router.GET("/feature/:id/status", handler)
 
-	if e := http.ListenAndServe(":1024", router); e != nil {
+	if e := http.ListenAndServe(port, router); e != nil {
 		Println(e)
 	}
 }
