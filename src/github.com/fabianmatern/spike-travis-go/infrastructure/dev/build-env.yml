@@ -1,0 +1,12 @@
+version: '2.1'
+
+services:
+  build-env:
+    build: build-env
+    environment:
+      - DRP_CF_HTTP_PORT=8080
+    working_dir: /code/src/github.com/fabianmatern/spike-travis-go
+    volumes:
+      - "../../:/code/src/github.com/fabianmatern/spike-travis-go${DOCKER_VOLUME_MOUNT_MODE}"
+      - "../../.go-cache:/code/pkg${DOCKER_VOLUME_MOUNT_MODE}"
+

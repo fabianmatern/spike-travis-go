@@ -1,0 +1,11 @@
+version: '2.1'
+
+services:
+  cassandra:
+      build: cassandra
+      ports:
+        - "9042:9042"
+  app:
+    build: app
+    ports:
+      - "8080:8080"
